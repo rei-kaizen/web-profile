@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: url("{{ url_for('static', filename='home-bg1.png') }}");
+            background-size: cover;
+        }
+
+        header {
+            background-color: #33195991;
+            padding: 5px;
+            display: flex;
+        }
+
+        nav {
+            display: flex-end;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 10px;
+            font-size: 15px;
+        }
+
+        .container {
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        h1 {
+            font-size: 130px;
+            font-family: cursive;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="/profile">Profile</a>
+                <a href="/works">Works</a>
+                <a href="/contact">Contacts</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Hello;</h1>
+        <p>Welcome to my website! This is rendered using Flask's templating.</p>
+    </div>
+</body>
+</html>
+

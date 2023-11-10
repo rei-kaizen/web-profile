@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: url("{{ url_for('static', filename='profile-bg.png') }}");
+            background-size: cover;
+        }
+        
+        .profile-container {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+        }
+        .profile-image {
+            border-radius: 50%;
+            width: 300px;
+            height:300px;
+            object-fit: cover;
+            align-content: center;
+            margin-left: 250px;
+            margin-right: 20px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        .profile-description {
+            width: 35%;
+            font-family: 'Segoe UI', sans-serif
+        }
+        h1 {
+            font-size: 50px;
+            font-family: cursive;
+            text-align: center;
+            padding: 20px;
+            color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Profile</h1>
+    <hr>
+    <div class="profile-container">
+        <img src="{{ url_for('static', filename='profile-pic.jpg')}}" alt="Display Profile" class="profile-image">
+        <div class="profile-description">
+            <h2>Who is Denie Rose Bon?</h2>
+            <p>
+                Denie Rose Bon is a sophomore in Computer Engineering, Section 4, is dedicated to mastering Data Structures and Algorithms to engineer transformative innovations.  With an unwavering devotion to immersing oneself in the world of a novice, Denie firmly believes in the saying that "Possibilities are limitless." 🌟
+            </p>
+        </div>
+    </div>
+</body>
+</html>

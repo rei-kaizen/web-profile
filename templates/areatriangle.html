@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Area of a Triangle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url("{{ url_for('static', filename='works-bg.png') }}");
+            background-size: cover;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Provide base and height for the triangle</h1>
+    <form action="/areaOftriangle" method="post">
+        <label for="inputBase">Enter the value of base:</label>
+        <input type="number" id="inputBase" name="inputBase"><br><br>
+        <label for="inputHeight">Enter the value of height:</label>
+        <input type="number" id="inputHeight" name="inputHeight"><br><br>
+        <input type="submit" value="Compute">
+    </form>
+
+    {% if result %}
+    <p>Area of the Triangle: {{ result }}</p>
+    {% endif %}
+</body>
+</html>
