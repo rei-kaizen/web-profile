@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background: url("{{ url_for('static', filename='works-bg.png') }}");
-            background-size: cover;
-            color: #fff;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lowercase Converter</title>
 </head>
 <body>
-    <h1>Lowercase Converter</h1>s
-    <form action="/convertLowerCase" method="post">
-        <label for="inputString">Enter a string:</label>
-        <input type="text" id="inputString" name="inputString">
-        <input type="submit" value="Convert">
-    </form>
-
-    {% if result %}
-    <p>Converted string: {{ result }}</p>
-    {% endif %}
+    <div class = "works-bg-image">
+        <h1>Lowercase Converter</h1>
+        <div class = "works-container">
+            <form action="/convertLowerCase" method="post">
+                <label for="inputString"> Enter a string:</label>
+                <input type="text" id="inputString" name="inputString">
+                <button id="convertButton">Convert</button>
+            </form>
+            
+            <div class="result">
+                {% if result %}
+                <p> Converted string: {{ result }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -2,85 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacts</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            color: #ffffff;
-            text-align: center;
-            background: url("{{ url_for('static', filename='contact-bg.png') }}");
-            background-size: cover;
-        }
-
-        h1 {
-            font-family: cursive;
-            font-size: 30px;
-            color: #ffffff;
-        }
-
-        .container {
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            margin-left: 750px;
-        }
-
-        .contactinfo {
-            color: #ffffff;
-            text-align: left;
-            margin-left: 80px;
-    
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        label {
-            margin: 10px 0;
-        }
-        
-        input, textarea {
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        
-        input[type="submit"] {
-            background-color: #E691CA;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-        
-        input[type="submit"]:hover {
-            background-color: #CD8EF4;
-        }
-    </style>
 </head>
 <body>
-    <div class="contactinfo">
-        <h1>Contact</h1>
-        <hr>
-        <h4>Phone Number</h4>
-        <p>#8700</p>
-        <h4><bold>Email</bold></h4>
-        <p>hello@deniebon.com</p>
-    </div>
-    <div class="container">
-        <h2>Get in Touch</h2>
-        <p>I'd love to here from you!</p>
-        <form>
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
-            <input type="email" id="email" name="email" placeholder="Your Email" required>
-            <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
-            <input type="submit" value="Send Message">
-        </form>
+    <div class="contact-bg-image">
+        <div class="contactinfo">
+            <h1>Contacts</h1>
+            <hr>
+            <h4><bold>Email</bold></h4>
+            <p>hallo@deniebon.com</p>
+        </div>
+        <div class="contactainer">
+            <h3>Get in Touch</h3>
+            <p>I'd love to here from you!</p>
+            <form>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+                <input type="submit" value="Send Message">
+            </form>
+        </div>
     </div>
 </body>
 </html>

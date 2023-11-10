@@ -2,60 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
     <title>Home Page</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: url("{{ url_for('static', filename='home-bg1.png') }}");
-            background-size: cover;
-        }
-
-        header {
-            background-color: #33195991;
-            padding: 5px;
-            display: flex;
-        }
-
-        nav {
-            display: flex-end;
-        }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 10px;
-            font-size: 15px;
-        }
-
-        .container {
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-            color: #ffffff;
-        }
-
-        h1 {
-            font-size: 130px;
-            font-family: cursive;
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
+    <div class="home-bg-image">
+        <header>
             <nav>
                 <a href="/profile">Profile</a>
                 <a href="/works">Works</a>
                 <a href="/contact">Contacts</a>
             </nav>
+        </header>
+        <div class="logo-wrapper">
+            <img src="{{ url_for('static', filename='assets/logo.png')}}" alt="DB Logo" class="logo-image">
         </div>
-    </header>
-
-    <div class="container">
-        <h1>Hello;</h1>
-        <p>Welcome to my website! This is rendered using Flask's templating.</p>
+        <section id="hero" class="hero-section">
+            <div class="hi-animation" data-w-id="ff7db4ed-1998-ba6f-174f-298ad91b994b" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/6014d63282f72c94d8863ebb/601799207cad0917720e287c_hi.json" data-loop="0" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="2.669335893945058" data-duration="0"></div>
+            <div class="hero-container">
+                <div class="hero-text">
+                <h1 class="name">👋 Hallo, I'm Denie Bon</h1>
+                <div class="welcome"> Welcome to my website</div>
+                </div>
+            </div>
+        </section>
+        <script>
+            var hiAnimation = document.querySelector('.hi-animation');
+            var hiAnimationData = {
+                container: hiAnimation,
+                renderer: 'svg',
+                loop: false,
+                autoplay: true,
+                path: hiAnimation.getAttribute('data-src')
+            };
+            var hiAnim;
+            hiAnim = lottie.loadAnimation(hiAnimationData);
+            hiAnim.addEventListener('complete', function() {
+                hiAnim.destroy();
+                hiAnim = lottie.loadAnimation(hiAnimationData);
+            });
+        </script>
     </div>
 </body>
 </html>
-

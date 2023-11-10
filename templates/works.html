@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programming Works</title>
-    <style>
+    <!-- <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -31,18 +34,20 @@
             border-radius: 20px;
             margin: 5px;
         }
-    </style>
+    </style> -->
 </head>
 <body>
-    <h1>Programming Works</h1>
-    <div class="button-container">
-        <a class="button" href="/areaOfcircle">Area of a Circle</a>
-        <a class="button" href="/convertUpperCase">Convert to Uppercase</a>
-    </div>
-    <div class="button-container">
-        <a class="button" href="/convertLowerCase">Convert to Lowercase</a>
-        <a class="button" href="/areaOftriangle">Area of a Triangle</a><br>   
-
+    <div class = "works-bg-image">
+        <header></header>
+        <h1>Programming Works</h1>
+        <div class="button-container">
+            <a class="button" href="/areaOfcircle">Area of a Circle</a>
+            <a class="button" href="/convertUpperCase">Convert to Uppercase</a>
+        </div>
+        <div class="button-container">
+            <a class="button" href="/convertLowerCase">Convert to Lowercase</a>
+            <a class="button" href="/areaOftriangle">Area of a Triangle</a><br> 
+        </div>  
     </div>
 </body>
 </html>

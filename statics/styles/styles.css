@@ -1,0 +1,232 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  margin: 0;
+}
+.home-bg-image {
+  background: url("../assets/home-bg1.png");
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+}
+.profile-bg-image {
+  background: url("../assets/profile-bg.png");
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+}
+.contact-bg-image {
+  background: url("../assets/contact-bg.png");
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+}
+.works-bg-image {
+  background: url("../assets/works-bg.png");
+  background-size: contain;
+  height: 100vh;
+  background-position: center;
+}
+header {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+.logo-wrapper {
+    z-index: 5;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    opacity: 0.8;
+}
+.logo-image {
+width: 50px;
+}
+.hero-section {
+    width: 100vw;
+    height: 118vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+.hero-container {
+    transform: scale3d(1none, 1none, 1none);
+    transform-style: preserve-3d;
+    align-items: center;
+    font-weight: 400;
+    display: block;
+    position: relative;
+    top: auto;
+    bottom: auto;
+}
+.hi-animation {
+    z-index: 1;
+    width: 270vw;
+    height: 180vh;
+    opacity: 0.2;
+    position: absolute;
+    top: -48%;
+    bottom: 0%;
+    left: -85.65%;
+    right: -85.65%;
+}
+.hero-text {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+.name {
+    z-index: 3;
+    color: #ffffff;
+    text-align: center;
+    font-family: Segoe UI, sans-serif;
+    font-size: 46px;
+    font-weight: 500;
+    line-height: 50px;
+}
+.welcome {
+    color: #fafafa;
+    text-align: center;
+    padding-left: 60px;
+    font-family: Segoe UI, sans-serif;
+    font-size: 30px;
+}
+nav {
+    margin-left: 900px;
+    padding: 45px;
+}
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 20px;
+}
+.profile-container {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+.profile-image {
+  border-radius: 50%;
+  width: 300px;
+  height:300px;
+  object-fit: cover;
+  align-content: center;
+  margin-left: 250px;
+  margin-right: 20px;
+  margin-top: 20px;
+  padding: 20px;
+}
+.profile-description {
+  width: 35%;
+  font-family: 'Segoe UI', sans-serif
+}
+h1 {
+  font-size: 50px;
+  font-family: cursive;
+  padding-top: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+h2 {
+  font-family: cursive;
+  font-size: 30px;
+  color: #ffffff;
+}
+.head-contacts {
+    font-family: cursive;
+    font-size: 30px;
+    color: #ffffff;
+}
+.contactainer {
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin-left: 750px;
+}
+.contactinfo {
+  color: #ffffff;
+  text-align: left;
+  margin-left: 80px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  margin: 10px 0;
+}
+input, textarea {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type="submit"] {
+  background-color: #E691CA;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #CD8EF4;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+.button {
+  background-color: #F48EE3;
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+  border-radius: 20px;
+  margin: 5px;
+}
+#inputInteger {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  margin: 10px;
+}
+#inputHeight {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  margin: 10px;
+}
+#inputBase {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  margin: 10px;
+}
+#convertButton {
+  background-color: #db34a9;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.result {
+  font-weight: bold;
+  color: #e73cd9;
+  margin: 10px;
+  text-align: center;
+}
+.works-container {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
