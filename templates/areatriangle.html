@@ -1,28 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Area of a Triangle</title>
-</head>
-<body>
-    <div class="works-bg-image">
-        <h1>Provide base and height for the triangle</h1>
-        <div class="works-container">
-            <form action="/areaOftriangle" method="post">
-                <label for="inputBase"> Base:</label>
-                <input type="number" id="inputBase" name="inputBase">
-                <label for="inputHeight"> Height:</label>
-                <input type="number" id="inputHeight" name="inputHeight">
-                <button id="convertButton">Compute</button>
+{% extends "base.html" %}
+
+{% block title %}Triangle Area Calculator - Denie Bon{% endblock %}
+
+{% block content %}
+<section class="section" style="padding-top: 120px;">
+    <div class="container-sm">
+        <div class="text-center mb-xl">
+            <h1 class="hero-title">Triangle Area Calculator</h1>
+            <p class="hero-subtitle">Calculate the area of a triangle using base and height</p>
+        </div>
+
+        <div class="tool-container">
+            <form action="/areaOftriangle" method="post" class="tool-form">
+                <div class="grid grid-2 gap-lg">
+                    <div class="form-group">
+                        <label for="inputBase" class="form-label">Base (units)</label>
+                        <input type="number" id="inputBase" name="inputBase" class="form-input" 
+                               placeholder="Enter base value" step="any" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputHeight" class="form-label">Height (units)</label>
+                        <input type="number" id="inputHeight" name="inputHeight" class="form-input" 
+                               placeholder="Enter height value" step="any" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Calculate Area</button>
             </form>
-            <div class="result">
-                {% if result %}
-                <p>Area of the Triangle: {{ result }}</p>
-                {% endif %}
+
+            {% if result %}
+            <div class="tool-result tool-success">
+                <h4>Triangle Area:</h4>
+                <p><strong>{{ result }} square units</strong></p>
+                <small>Formula: ½ × base × height</small>
             </div>
+            {% endif %}
+        </div>
+
+        <div class="text-center mt-xl">
+            <a href="/works" class="btn btn-ghost">← Back to Projects</a>
         </div>
     </div>
-</body>
-</html>
+</section>
+{% endblock %}

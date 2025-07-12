@@ -1,27 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lowercase Converter</title>
-</head>
-<body>
-    <div class = "works-bg-image">
-        <h1>Lowercase Converter</h1>
-        <div class = "works-container">
-            <form action="/convertLowerCase" method="post">
-                <label for="inputString"> Enter a string:</label>
-                <input type="text" id="inputString" name="inputString">
-                <button id="convertButton">Convert</button>
+{% extends "base.html" %}
+
+{% block title %}Lowercase Converter - Denie Bon{% endblock %}
+
+{% block content %}
+<section class="section" style="padding-top: 120px;">
+    <div class="container-sm">
+        <div class="text-center mb-xl">
+            <h1 class="hero-title">Lowercase Converter</h1>
+            <p class="hero-subtitle">Transform your text to lowercase effortlessly</p>
+        </div>
+
+        <div class="tool-container">
+            <form action="/convertLowerCase" method="post" class="tool-form">
+                <div class="form-group">
+                    <label for="inputString" class="form-label">Enter your text</label>
+                    <input type="text" id="inputString" name="inputString" class="form-input" 
+                           placeholder="Type something here..." required>
+                </div>
+                <button type="submit" class="btn btn-primary">Convert to Lowercase</button>
             </form>
-            
-            <div class="result">
-                {% if result %}
-                <p> Converted string: {{ result }}</p>
-                {% endif %}
+
+            {% if result %}
+            <div class="tool-result tool-success">
+                <h4>Converted Text:</h4>
+                <p><strong>{{ result }}</strong></p>
             </div>
+            {% endif %}
+        </div>
+
+        <div class="text-center mt-xl">
+            <a href="/works" class="btn btn-ghost">← Back to Projects</a>
         </div>
     </div>
-</body>
-</html>
+</section>
+{% endblock %}

@@ -1,29 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacts</title>
-</head>
-<body>
-    <div class="contact-bg-image">
-        <div class="contactinfo">
-            <h1>Contacts</h1>
-            <hr>
-            <h4><bold>Email</bold></h4>
-            <p>hallo@deniebon.com</p>
+{% extends "base.html" %}
+
+{% block title %}Contact - Denie Bon{% endblock %}
+
+{% block content %}
+<section class="section" style="padding-top: 120px;">
+    <div class="container">
+        <div class="text-center mb-xl">
+            <h1 class="hero-title">Let's Connect</h1>
+            <p class="hero-subtitle">I'd love to hear from you and explore collaboration opportunities</p>
         </div>
-        <div class="contactainer">
-            <h3>Get in Touch</h3>
-            <p>I'd love to here from you!</p>
-            <form>
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-                <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
-                <input type="submit" value="Send Message">
-            </form>
+
+        <div class="grid grid-2 gap-xl">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Contact Information</h3>
+                    <p class="card-description">
+                        Ready to discuss projects, opportunities, or just connect with a fellow tech enthusiast.
+                    </p>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4 class="contact-label">📧 Email</h4>
+                        <p class="contact-value">bondenie@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4 class="contact-label">🎯 Focus</h4>
+                        <p class="contact-value">Computer Engineering & Innovation</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4 class="contact-label">🌟 Interests</h4>
+                        <p class="contact-value">Collaboration, Learning, Problem Solving</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Send a Message</h3>
+                    <p class="card-description">
+                        Drop me a line and let's start a conversation about technology, projects, or opportunities.
+                    </p>
+                </div>
+                
+                <form class="contact-form" method="POST" action="/contact">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Your Message</label>
+                        <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project or just say hello!" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
         </div>
     </div>
-</body>
-</html>
+</section>
+{% endblock %}

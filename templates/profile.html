@@ -1,24 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
-</head>
-<body>
-    <div class="profile-bg-image">
-        <h1>Profile</h1>
-        <hr>
-        <div class="profile-container">
-            <img src="{{ url_for('static', filename='assets/profile-pic.jpg')}}" alt="Display Profile" class="profile-image">
-            <div class="profile-description">
-                <h2>Who is Denie Rose Bon?</h2>
-                <p>
-                    Denie Rose Bon is a sophomore in Computer Engineering, Section 4, is dedicated to mastering Data Structures and Algorithms to engineer transformative innovations.  With an unwavering devotion to immersing oneself in the world of a novice, Denie firmly believes in the saying that "Possibilities are limitless." 🌟
+{% extends "base.html" %}
+
+{% block title %}About - Denie Bon{% endblock %}
+
+{% block content %}
+<section class="section" style="padding-top: 120px;">
+    <div class="container-sm">
+        <div class="text-center mb-xl">
+            <h1 class="hero-title">About Me</h1>
+            <div class="hero-subtitle">Passionate Computer Engineering Student</div>
+        </div>
+        
+        <div class="card">
+            <div class="flex flex-col items-center gap-xl">
+                <div class="profile-image-container">
+                    <img src="{{ url_for('static', filename='assets/profile-pic.jpg')}}" 
+                         alt="Denie Rose Bon" 
+                         class="profile-image">
+                </div>
+                
+                <div class="text-center">
+                    <h2 class="card-title mb-lg">Who is Denie Rose Bon?</h2>
+                    <p class="card-description" style="font-size: var(--font-size-lg); line-height: 1.8;">
+                        I'm a sophomore in Computer Engineering, Section 4, dedicated to mastering Data Structures 
+                        and Algorithms to engineer transformative innovations. With an unwavering devotion to 
+                        immersing myself in the world of continuous learning, I firmly believe in the saying that 
+                        <strong>"Possibilities are limitless."</strong> 🌟
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-2 mt-xl">
+            <div class="card">
+                <h3 class="card-title">🎯 Focus Areas</h3>
+                <ul class="focus-list">
+                    <li>Data Structures & Algorithms</li>
+                    <li>Software Engineering</li>
+                    <li>Web Development</li>
+                    <li>Problem Solving</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3 class="card-title">💭 Philosophy</h3>
+                <p class="card-description">
+                    I approach every challenge with curiosity and determination, believing that 
+                    the intersection of technology and creativity holds the key to solving tomorrow's problems.
                 </p>
             </div>
         </div>
     </div>
-</body>
-</html>
+</section>
+{% endblock %}

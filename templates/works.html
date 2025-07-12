@@ -1,24 +1,42 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programming Works</title>
-</head>
-<body>
-    <div class = "works-bg-image">
-        <header></header>
-        <h1>Programming Works</h1>
-        <div class="button-container">
-            <a class="button" href="/areaOfcircle">Area of a Circle</a>
-            <a class="button" href="/convertUpperCase">Convert to Uppercase</a>
-        </div>
-        <div class="button-container">
-            <a class="button" href="/convertLowerCase">Convert to Lowercase</a>
-            <a class="button" href="/areaOftriangle">Area of a Triangle</a><br> 
-        </div>  
-    </div>
-</body>
-</html>
+{% extends "base.html" %}
 
+{% block title %}Projects - Denie Bon{% endblock %}
+
+{% block content %}
+<section class="section" style="padding-top: 120px;">
+    <div class="container">
+        <div class="text-center mb-xl">
+            <h1 class="hero-title">My Data Structure and Algorithms Projects</h1>
+            <p class="hero-subtitle">Exploring the world of programming through practical applications</p>
+        </div>
+
+        <div class="grid grid-2">
+            <div class="card project-card">
+                <div class="card-header">
+                    <h3 class="card-title">🔤 Text Converters</h3>
+                    <p class="card-description">
+                        Simple yet effective tools for text manipulation and formatting.
+                    </p>
+                </div>
+                <div class="project-buttons">
+                    <a href="/convertUpperCase" class="btn btn-primary">Uppercase Converter</a>
+                    <a href="/convertLowerCase" class="btn btn-secondary">Lowercase Converter</a>
+                </div>
+            </div>
+
+            <div class="card project-card">
+                <div class="card-header">
+                    <h3 class="card-title">📐 Geometry Calculators</h3>
+                    <p class="card-description">
+                        Mathematical tools for calculating areas of basic geometric shapes.
+                    </p>
+                </div>
+                <div class="project-buttons">
+                    <a href="/areaOfcircle" class="btn btn-primary">Circle Area</a>
+                    <a href="/areaOftriangle" class="btn btn-secondary">Triangle Area</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

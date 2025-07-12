@@ -1,49 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
-    <title>Home Page</title>
-</head>
-<body>
-    <div class="home-bg-image">
-        <header>
-            <nav>
-                <a href="/profile">Profile</a>
-                <a href="/works">Works</a>
-                <a href="/contact">Contacts</a>
-            </nav>
-        </header>
-        <div class="logo-wrapper">
-            <img src="{{ url_for('static', filename='assets/logo.png')}}" alt="DB Logo" class="logo-image">
-        </div>
-        <section id="hero" class="hero-section">
-            <div class="hi-animation" data-w-id="ff7db4ed-1998-ba6f-174f-298ad91b994b" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/6014d63282f72c94d8863ebb/601799207cad0917720e287c_hi.json" data-loop="0" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="2.669335893945058" data-duration="0"></div>
-            <div class="hero-container">
-                <div class="hero-text">
-                <h1 class="name">👋 Hallo, I'm Denie Bon</h1>
-                <div class="welcome"> Welcome to my website</div>
+{% extends "base.html" %}
+
+{% block title %}Denie Bon - Computer Engineer & Innovator{% endblock %}
+
+{% block extra_head %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+
+            <div class="hi-animation" 
+                 data-w-id="ff7db4ed-1998-ba6f-174f-298ad91b994b" 
+                 data-animation-type="lottie" 
+                 data-src="https://uploads-ssl.webflow.com/6014d63282f72c94d8863ebb/601799207cad0917720e287c_hi.json" 
+                 data-loop="0" 
+                 data-direction="1" 
+                 data-autoplay="1" 
+                 data-is-ix2-target="0" 
+                 data-renderer="svg" 
+                 data-default-duration="2.669335893945058" 
+                 data-duration="0">
+            </div>
+            
+            <div class="hero-text fade-in">
+                <h1 class="hero-title">👋 Hello, I'm Denie Bon</h1>
+                <p class="hero-subtitle">Computer Engineering Student & Innovation Enthusiast</p>
+                <p class="hero-description">
+                    Passionate about crafting elegant solutions through code, exploring the frontiers of technology, 
+                    and building meaningful connections in the engineering community.
+                </p>
+                <div class="flex gap-lg mt-xl justify-center">
+                    <a href="/works" class="btn btn-primary">View My Projects</a>
+                    <a href="/contact" class="btn btn-secondary">Let's Connect</a>
                 </div>
             </div>
-        </section>
-        <script>
-            var hiAnimation = document.querySelector('.hi-animation');
-            var hiAnimationData = {
-                container: hiAnimation,
-                renderer: 'svg',
-                loop: false,
-                autoplay: true,
-                path: hiAnimation.getAttribute('data-src')
-            };
-            var hiAnim;
-            hiAnim = lottie.loadAnimation(hiAnimationData);
-            hiAnim.addEventListener('complete', function() {
-                hiAnim.destroy();
-                hiAnim = lottie.loadAnimation(hiAnimationData);
-            });
-        </script>
+        </div>
     </div>
-</body>
-</html>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="grid grid-3">
+            <div class="card fade-in">
+                <div class="card-header">
+                    <h3 class="card-title">🚀 Innovation</h3>
+                </div>
+                <p class="card-description">
+                    Transforming ideas into reality through cutting-edge technology and creative problem-solving.
+                </p>
+            </div>
+            <div class="card fade-in">
+                <div class="card-header">
+                    <h3 class="card-title">💡 Learning</h3>
+                </div>
+                <p class="card-description">
+                    Continuously expanding knowledge in Data Structures, Algorithms, and emerging technologies.
+                </p>
+            </div>
+            <div class="card fade-in">
+                <div class="card-header">
+                    <h3 class="card-title">🌟 Growth</h3>
+                </div>
+                <p class="card-description">
+                    Embracing challenges with the belief that possibilities are truly limitless.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Preserved Hi Animation Script
+    var hiAnimation = document.querySelector('.hi-animation');
+    if (hiAnimation) {
+        var hiAnimationData = {
+            container: hiAnimation,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: hiAnimation.getAttribute('data-src')
+        };
+        var hiAnim = lottie.loadAnimation(hiAnimationData);
+        hiAnim.addEventListener('complete', function() {
+            hiAnim.destroy();
+            hiAnim = lottie.loadAnimation(hiAnimationData);
+        });
+    }
+
+    // Fade in animation on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+    });
+</script>
+{% endblock %}

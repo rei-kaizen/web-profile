@@ -1,26 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Area of a Circle</title>
-</head>
-<body>
-    <div class="works-bg-image">
-        <h1>Provide radius of the circle</h1>
-        <div class = "works-container">
-            <form action="/areaOfcircle" method="post">
-                <label for="inputInteger"> Radius:</label>
-                <input type="number" id="inputInteger" name="inputInteger">
-                <button id="convertButton">Compute</button>
+{% extends "base.html" %}
+
+{% block title %}Circle Area Calculator - Denie Bon{% endblock %}
+
+{% block content %}
+<section class="section" style="padding-top: 120px;">
+    <div class="container-sm">
+        <div class="text-center mb-xl">
+            <h1 class="hero-title">Circle Area Calculator</h1>
+            <p class="hero-subtitle">Calculate the area of a circle using its radius</p>
+        </div>
+
+        <div class="tool-container">
+            <form action="/areaOfcircle" method="post" class="tool-form">
+                <div class="form-group">
+                    <label for="inputInteger" class="form-label">Radius (units)</label>
+                    <input type="number" id="inputInteger" name="inputInteger" class="form-input" 
+                           placeholder="Enter radius value" step="any" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Calculate Area</button>
             </form>
-            <div class="result">
-                {% if result %}
-                <p>Area of the Circle: {{ result }}</p>
-                {% endif %}
+
+            {% if result %}
+            <div class="tool-result tool-success">
+                <h4>Circle Area:</h4>
+                <p><strong>{{ result }} square units</strong></p>
+                <small>Formula: π × r²</small>
             </div>
+            {% endif %}
+        </div>
+
+        <div class="text-center mt-xl">
+            <a href="/works" class="btn btn-ghost">← Back to Projects</a>
         </div>
     </div>
-</body>
-</html>
+</section>
+{% endblock %}
